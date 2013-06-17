@@ -1,0 +1,208 @@
+// Compass includes
+@import "compass/utilities";
+@import "compass/css3";
+
+// Variables
+$base-font-family:  'Arial', sans-serif;
+$base-font-size: 12px;
+$base-line-height: 18px;
+$baseline: $base-line-height / 3;
+
+$myriad:            'Myriad Pro', $base-font-family;
+$helvetica:         'Helvetica', $base-font-family;
+
+$xxl-font:          43px;
+$xl-font:           20px;
+$l-font:            18px;
+$font:              16px;
+$m-font:            15px;
+$s-font:            14px;
+$xs-font:           13px;
+$xxs-font:          12px;
+
+// Functions
+@function b($amount: 1) {
+    @return $baseline * $amount;
+}
+
+@media screen and(max-width:689px) {
+    .xxl-font { font-size: 43px / 100 * 70 ; }
+    .xl-font {  font-size: 20px; }
+    .l-font {   font-size: 18px; }
+    .font {     font-size: 16px; }
+    .m-font {   font-size: 15px; }
+    .s-font {   font-size: 14px; }
+    .xs-font {  font-size: 13px; }
+    .xxs-font { font-size: 12px; }
+}
+// ALLES HIERONDER MAG GROOOOOTER!!!!!
+@media screen and(min-width:690px) {
+    .xxl-font { font-size: 43px / 100 * 75 ; }
+    .xl-font {  font-size: 22px; }
+    .l-font {   font-size: 21px; }
+    .font {     font-size: 16px; }
+    .m-font {   font-size: 15px; }
+    .s-font {   font-size: 14px; }
+    .xs-font {  font-size: 13px; }
+    .xxs-font { font-size: 12px; }
+}
+@media screen and(min-width:980px) {
+    .xxl-font { font-size: 43px; }
+    .xl-font {  font-size: 20px; }
+    .l-font {   font-size: 18px; }
+    .font {     font-size: 16px; }
+    .m-font {   font-size: 15px; }
+    .s-font {   font-size: 14px; }
+    .xs-font {  font-size: 13px; }
+    .xxs-font { font-size: 12px; }
+}
+// Vars
+$base-font-size:    $s-font;
+$base-line-height:  22px;
+
+$white:             #fff;
+$black:             #000;
+$llgray:            #adabb4;
+$lgray:             #616777;
+$mgray:             #adacb4;
+$gray:              #4a4849;
+$dgray:             #2e333f;
+$red:               #f00000;
+
+$img:               '../img/';
+
+// Base styles
+@import 'core/normalize.scss';
+@import 'core/h5bp.scss';
+
+// Extra's
+@import 'core/helpers.scss';
+@import 'components/fancybox.scss';
+@import 'blueprint/buttons';
+
+// Components
+@import 'components/typography.scss';
+// @import 'components/icons.scss';
+@import 'components/grid.scss';
+@import 'components/buttons.scss';
+@import 'components/tables.scss';
+@import 'components/forms.scss';
+@import 'components/navigation.scss';
+@import 'components/filter.scss';
+@import 'components/slider.scss';
+// @import 'components/loader.scss';
+
+// Body with baseline background
+body {
+    @include background(linear-gradient(top, rgba(0, 0, 0, 0) $baseline - 1, rgba(0, 0, 0, 0.3) $baseline));
+    background-size: 100% $baseline;
+    background-position: 0 2px;
+}
+
+// Helpers
+.mobile {
+    display: block;
+    @media screen and(min-width:690px) {
+        display: none;
+    }
+}
+
+.tablet {
+    display: none;
+    @media screen and(min-width:690px) and (max-width:979px) {
+        display: block;
+    }
+}
+
+.desktop {
+    display: none;
+    @media screen and(min-width:980px) {
+        display: block;
+    }
+}
+
+// Html, Body
+html, body {
+    overflow-x: hidden;
+}
+
+// Html
+html {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+// Body
+body {
+    overflow: hidden;
+    width: 100%;
+    min-height: 100%;
+}
+
+// .masthead
+.masthead {
+    @media screen and(max-width:689px) {
+        @include box-shadow( 0 1px 3px rgba($black, .3) );
+        height: 44px;
+    }
+    @media screen and(min-width:690px) {
+        padding: 15px 0;
+    }
+    display: block;
+    overflow: hidden;
+    background-color: $gray;
+    position: relative;
+}
+
+// Content
+.content {
+    // SET TRANSITION ONLY TO TRANSFORM
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+
+    @include translate3d(0, 0, 0);
+    
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+
+    // background: $white;
+}
+
+// Off-canvas-visible
+.off-canvas-visible {
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+    .content {
+        @include translate3d(260px, 0, 0);
+    }
+}
+
+// Filter-visible
+.filter-visible {
+    .content {
+        display: none;
+    }
+    .filter {
+        display: block;
+    }
+}
+
+// Images
+img {
+    max-width: 100%;
+}
+
+// Wrappers
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}

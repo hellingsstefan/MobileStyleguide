@@ -1,0 +1,193 @@
+// SLIDER
+
+// Product details wrapper
+.pd-wrapper {
+    @include box-sizing( border-box );
+    width: 300px;
+    @media screen and(max-width:689px) {
+        margin-bottom: 15px;
+    }
+    @media screen and(min-width:690px) {
+        // width: 680px / 100 * 75 ;
+        width: 450px;
+    }
+    @media screen and(min-width:980px) {
+        width: 680px;
+    }
+    margin: 0 auto;
+    // overflow: hidden;
+    position: relative;
+}
+
+// Product details carousel
+.pd-carousel {
+    height: 310px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    img {
+        width: 300px;
+        height: 191px;
+        @media screen and(min-width:690px) {
+            // width: 680px / 100 * 75 ;
+            width: 450px;
+            // height: 434px / 100 * 75 ;
+            height: 287px;
+            overflow: initial;
+        }
+        @media screen and(min-width:980px) {
+            width: 680px;
+            height: 434px;
+            overflow: hidden;
+        }
+        display: block;
+        float: left;
+    }
+}
+
+// Product details pager 
+// These are the image thumbs
+.pd-pager {
+    @media screen and(min-width:690px) {
+        display: block;
+    }
+    @media screen and(min-width:690px) {
+        height: 63px;
+        width: 450px;
+        margin-top: 32px;
+        margin-left: -218px;
+        bottom: 0;
+    }
+    @media screen and(min-width:980px) {
+        width: 360px;
+        height: 51px;
+        margin-top: 0;
+        margin-left: - ( 360px / 2 );
+        position: absolute;
+        bottom: 8px;
+    }
+    width: 360px;
+    height: 51px;
+    margin-top: 15px;
+    margin-left: - ( 360px / 2 );
+    display: none;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    z-index: 3;
+    .caroufredsel_wrapper {
+        @include box-sizing( border-box );
+        float: left !important; // To remove js injected style by plugin
+        margin: 0 5px !important; // To remove js injected style by plugin
+        border: 1px solid #575555;
+        @media screen and(min-width:690px) and(max-width: 959px) {
+            width: 99px !important;
+            height: 63px !important;
+        }
+    }
+    div {
+        width: 80px;
+        height: 80px;
+    }
+    img {
+        cursor: pointer;
+        display: block;
+        height: 70px;
+        width: 100px;
+        margin-bottom: 10px;
+        float: left;
+    }
+}
+
+// Product details pagination (ONLY FOR MOBILE)
+.pd-pagination {
+    width: 70px;
+    margin: 0 auto;
+    margin-left: -(70px / 2);
+    display: block;
+    float: none;
+    clear: both;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    z-index: 4;
+    @media screen and(min-width:690px) {
+        display: none !important; // To remove js injected style by plugin
+    }
+    a {
+        @include border-radius( 10px );
+        width: 10px;
+        height: 10px;
+        margin: 0 2px;
+        display: block;
+        float: left;
+        overflow: hidden;
+        background-color: #5a5957;
+        &.selected {
+            background-color: $red;
+        }
+        span {
+            display: block;
+            text-indent: -9999px;
+        }
+    }
+}
+
+// Prev, Next button
+.pd-prev, .pd-next {
+    @include box-sizing( border-box );
+    @media screen and(min-width:690px) {
+        top: 136px
+    }
+    @media screen and(min-width:980px) {
+        top: 50%;
+    }
+    width: 24px;
+    height: 24px;
+    margin-top: - (24px / 2);
+    padding: 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    background-color: #312f2d;
+    text-indent: -9999px;
+    &:hover, &:focus {
+        background-color: $red;
+    }
+}
+
+// Prev
+.pd-prev {
+    // @include icon('arrow-left-white', $offset-x: 8px, $offset-y: 5px);
+    left: 0;
+}
+
+// Next
+.pd-next {
+    // @include icon('arrow-right-white', $offset-x: 8px, $offset-y: 5px);
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

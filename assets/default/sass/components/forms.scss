@@ -1,0 +1,91 @@
+form {
+    @include box-sizing( border-box );
+    
+    .input {
+        @extend .clearfix;
+        margin-bottom: 12px;
+    }
+
+    // RESET BORDER RADIUS ON INPUT IPHONE/SAFFARI 
+    input[type="search"] {
+        -webkit-appearance: none !important;
+        -webkit-border-radius: 0;
+    }
+
+    input[type=text],
+    input[type=email],
+    textarea, {
+        @include box-sizing( border-box );
+        display: block;
+        width: 100%;
+        margin: 0 0 13px 0;
+        padding: 5px;
+        border: 1px solid #d7d7d7;
+    }
+
+    textarea {
+        height: 155px;
+    }
+
+    label,
+    .label {
+        color: #616777;
+        display: block;
+        margin: 0 0 2px 0;
+    }
+
+    .checkboxes {
+        label {
+            margin: 0 0 0 b(1);
+        }
+    }
+
+    input[type=submit],
+    button {
+        @include box-sizing( border-box );
+        margin: b(1) 0;
+    }
+
+    .error {
+        input, textarea {
+            border: 1px solid #cdaaaa;
+            background-color: #f2dede;
+        }
+        span.error {
+            // @include icon(error);
+            margin-left: 5px;
+            color: #8d313d;
+        }
+    }
+
+    &.form-search {
+        position: relative;
+        input {
+            @media screen and(max-width:689px) {
+                padding-right: 48px
+            }
+            @media screen and(min-width:690px) {
+                width: 178px;
+                margin-top: 22px;
+            }
+            @media screen and(min-width:980px) {
+                width: 296px;
+                margin-top: 20px;
+            }
+            height: 41px;
+        }
+        .search {
+            @media screen and(min-width:690px) {
+                right: 0;
+                top: 34px;
+            }
+            @media screen and(min-width:980px) {
+                top: 32px;
+            }
+            top: 14px;
+            right: -10px;
+            position: absolute;
+        }
+    }
+
+}

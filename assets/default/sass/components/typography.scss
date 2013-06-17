@@ -1,0 +1,53 @@
+// TYPOGRAPHY
+
+html {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+}
+body, input, textarea {
+    font-family: $base-font-family;
+    font-size: 1em;
+    line-height: $base-line-height;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: b(4);
+    margin: b(3) 0 b(2);
+}
+h2 {
+    font-size: 1.5em;
+    line-height: b(3);
+    margin: b(2) 0 b(1);
+}
+h3 {
+    font-size: 1.33em;
+    line-height: b(3);
+    margin: b(2) 0 b(1);
+}
+h4,
+h5,
+h6 {
+    font-size: 1em;
+    margin: b(1) 0;
+}
+
+p { margin: b(1) 0; }
+
+ul,
+ol {
+    margin: b(1) 0;
+    padding: 0 0 0 b(6);
+    ul,
+    ol {
+        margin: 0;
+    }
+}
+
+hr {
+    margin: b(2) 0;
+    border: none;
+    height: 1px;
+    margin-top: -1px;
+}

@@ -1,0 +1,107 @@
+// GRID
+
+// Generate 12 cols
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        @include box-sizing( border-box );
+        width: 100%;
+        @media screen and(max-width:689px) {
+            padding: {
+                left: 20px;
+                right: 20px;
+            };
+        }
+        @media screen and(min-width:690px) {
+            width: 50px * $i + (( $i - 1 )*10px);
+            margin-left: 5px;
+            margin-right: 5px;
+            float: left;
+            display: block;
+            overflow: hidden;
+            [class*="col"] {
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        @media screen and(min-width:980px) {
+            width: 60px * $i + (( $i - 1 )*20px);
+            margin-left: 10px;
+            margin-right: 10px; 
+        }
+    }
+    .offset-#{$i} {
+        @media screen and(min-width:690px) {
+            margin-left: ( 60px * $i ) + 5px !important;
+        }
+        @media screen and(min-width:980px) {
+            margin-left: ( 80px * $i ) + 10px !important;
+        }
+    }
+}
+
+// 100% width col
+.col-full {
+    width: 100%;
+}
+
+// Large col (1040px wide)
+.col-large {
+    margin: 0;
+    position: relative;
+    left: -50%;
+    overflow: hidden;
+
+    @media screen and(min-width:690px) {
+        [class*="col"] {
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    @media screen and(min-width:690px) {
+        padding: 0 (40px / 100 * 75);
+    }
+    @media screen and(min-width:980px) {
+        padding: 0 40px;
+    }
+}
+
+// Row
+.row {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+    float: none;
+    clear: both;
+
+    @media screen and(min-width:690px) {
+        width: 720px;
+    }
+    @media screen and(min-width:980px) {
+        width: 960px;
+    }
+}
+
+// Large row
+.row-large {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+// EXAMPLE GRID
+.col-example {
+    [class*="col"] {
+        background: rgba($black, .2);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

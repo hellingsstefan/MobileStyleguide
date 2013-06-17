@@ -1,0 +1,239 @@
+// BUTTONS
+
+// Default Button
+.btn,
+button,
+input[type=submit] {
+    // height: 41px;
+    margin: 10px 10px 10px 0;
+    padding: 13px 15px 7px 15px;
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-decoration: none;
+    color: $white;
+    font-size: $m-font;
+    text-transform: uppercase;
+    font-family: $myriad;
+    // line-height: 45px;
+    text-align: left;
+    border: 0;
+    background-color: $gray;
+    &::after, .after {
+        // @include icon(arrow-right-white, $offset-y: -1px);
+        content: ' ';
+        margin: 0 0 0 15px;
+    }
+    &:hover, &:focus {
+        color: $white;
+        background-color: $red;
+        &::after, .after {
+            // @include icon(arrow-right-gray, $offset-y: -1px);
+        }
+    }
+    &:active {
+        background-color: darken($red, 10%);
+    }
+}
+
+// Load More Button
+.load-more {
+    .btn {
+        @include box-sizing( border-box );
+        @media screen and(max-width:689px) {
+            margin: 10px 0 0 20%;
+            position: relative;
+            left: -60px;
+        }
+        height: 30px;
+        margin: 10px auto;
+        display: inline-block;
+        float: none;
+        background-color: $black;
+        text-transform: none;
+        color: $white;
+        line-height: 7px;
+        &::after, .after {
+            // @include icon(arrow-down-red, $offset-y: 3px);
+        }
+        &:hover, &:focus {
+            background-color: $red;
+            &::after, .after {
+                // @include icon(arrow-down-black, $offset-y: 3px);
+            }
+        }
+    }
+}
+
+// Col-large Button
+.col-large {
+    .btn {
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 0;
+        background-color: #373432;
+        &::after, .after {
+            // @include icon(arrow-right-red, $offset-y: -1px);
+        }
+        &:hover, &:focus {
+            background-color: $red;
+            &::after, .after {
+                // @include icon(arrow-right-gray, $offset-y: -1px);
+            }
+        }
+    }
+}
+
+// Sidebar btn
+.sidebar {
+    .btn {
+        @media screen and(max-width:689px) {
+            width: auto;
+            margin: 0 0 20px 20px;
+            text-align: center;
+        }
+        @media screen and(min-width:690px) {
+            width: 100%;
+        }
+    }
+}
+
+// btn-print
+.btn-print {
+    &::after, .after {
+        // @include icon(printer-white, $offset-y: -1px);
+    }        
+    &:hover, &:focus {
+        background-color: $red;
+        &::after, .after {
+            // @include icon(printer-white, $offset-y: -1px);
+        }
+    }
+}
+
+// Different type of btn
+.btn-dif {
+    @extend .xs-font;
+    @include border-radius( 3px );
+    @include box-shadow( inset 0 1px $white );
+    width: 85px;
+    height: 29px;
+    margin: 6px 10px 6px 0;
+    padding: 0;
+    color: $gray;
+    line-height: auto;
+    border: 1px solid #adabb4;
+    text-transform: none;
+    font-family: $helvetica;
+    text-align: center;
+    background-color: #f8f4f3;
+    text-shadow: 1px 1px $white;
+    &::after, .after {
+        display: none;
+    }
+    &:hover, &:focus {
+        @include box-shadow( inset 0 1px #adabb4 );
+        color: $red;
+        background-color: #dddddd;
+    }
+    &.btn-print {
+        &::before, .before {
+            // @include icon(printer-gray);
+            content: ' ';
+        }
+        &:hover, &:focus {
+            &::before, .before {
+                // @include icon(printer);
+            }
+        }
+    }    
+    &.btn-mail {
+        &::before, .before {
+            // @include icon(mail-2);
+            content: ' ';
+        }
+        &:hover, &:focus {
+            &::before, .before {
+                // @include icon(mail-red);
+            }
+        }
+    }
+}
+
+.form-search {
+    position: relative;
+    .search, .btn-search {
+        // $w: image-width(sprite-file($icons, search));
+        // $h: image-height(sprite-file($icons, search));
+        // @include icon(search, $offset-x: 9px, $offset-y: 8px);
+        width: 41px;
+        height: 41px;
+        text-indent: -9999px;
+        background-color: #1d1d1d;
+    }
+}
+
+// btn-menu
+.btn-menu {
+    @include box-shadow( 1px 0 #5c5b5c );
+    width: 45px;
+    height: 44px;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 12px 0 0 0;
+    border-right: 1px solid #2e333f;
+    .btn-menu-bar {
+        @include box-shadow( 0 1px 1px rgba($black, .5) );
+        @include border-radius( 3px );
+        width: 21px;
+        height: 2px;
+        margin: 0 auto 4px auto;
+        display: block;
+        background-color: $white;
+        border-bottom: 1px solid rgba($white, .1);
+    }
+}
+
+// btn-filter
+.btn-filter {
+    @include box-shadow( -1px 0 #2e333f );
+    width: 80px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    float: right;
+    line-height: 44px;
+    font-family: $base-font-family;
+    font-size: 14px;
+    text-transform: none;
+    text-align: center;
+    border-left: 1px solid #5c5b5c;
+    &::before, .before {
+        // $w: image-width(sprite-file($icons, filter));
+        // $h: image-height(sprite-file($icons, filter));
+        // // @include icon(filter);
+        content: ' ';
+        // width: $w;
+        // height: $h;
+        // display: inline-block;
+        margin-right: 5px;
+        padding: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
